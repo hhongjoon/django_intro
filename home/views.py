@@ -32,9 +32,11 @@ def pong(request):
 
 def user_new(request):
     return render(request, 'user_new.html')
-    
+        
 def user_create(request):
-    return render(request, 'user_create.html')
+    nickname = request.POST.get('nickname')
+    password = request.POST.get('password')
+    return render(request, 'user_create.html', {'nickname':nickname, 'password':password})
 
     
     

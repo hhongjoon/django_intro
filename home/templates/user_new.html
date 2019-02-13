@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form acttion="/home/user_create/",  method="POST">
-        <input type="text" name="data"/>
-        <input type="password" name="pwd"/>
+
+{% extends 'base.html' %}
+{% block title %} user_new {% endblock %}
+{% block body %}
+    <form action="/home/user_create/",  method="POST">
+        <!--csrf_token 을 써야지 넘어감 / 보안문제때문-->
+        {% csrf_token %}  
+        <input type="text" name="nickname"/>
+        <input type="password" name="password"/>
         <input type="submit" name="submit"/>
         
     </form>
-    
-</body>
-</html>
+
+{% endblock %}

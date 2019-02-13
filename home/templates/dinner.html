@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} dinner {% endblock %}
+{% block body %}
+
     {% for dinner in dinner %}
-        <p>{{ dinner }}</p>
+    <p>{{ dinner }}</p>
     
     {% endfor %}
-    <hr>
-    {% if choice == '삼겹살' %}
+    <hr> {% if choice == '삼겹살' %}
     <p> 삼겹살!!!!!!!!!!</p>
     {% else %}
     <p>{{ choice }}</p>
     {% endif %}
-    
-</body>
-</html>
+
+{% endblock %}
+
