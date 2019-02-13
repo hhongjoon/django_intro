@@ -15,3 +15,10 @@ def dinner(requset):
     # return HttpResponse(choice)
     return render(requset, 'dinner.html',{'choice':choice, 'dinner':dinner})
     
+def hello(requset, name):
+    return render(requset, 'hello.html', {'name':name})
+    
+def cube(requset, num):
+    result = int(num)**3
+    return render(requset, 'cube.html',{'result':result})
+    
