@@ -20,5 +20,22 @@ def hello(requset, name):
     
 def cube(requset, num):
     result = int(num)**3
-    return render(requset, 'cube.html',{'result':result})
+    return render(requset, 'cube.html', {'result':result})
+    
+def ping(request):
+    return render(request, 'ping.html')
+
+def pong(request):
+    print(request.GET)
+    data = request.GET.get('data')
+    return render(request, 'pong.html',{'data':data})
+
+def user_new(request):
+    return render(request, 'user_new.html')
+    
+def user_create(request):
+    return render(request, 'user_create.html')
+
+    
+    
     
