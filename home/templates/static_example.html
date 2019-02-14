@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% load static %}
+<!--static 폴더를 가져오겠다 선언-->
+{% block title %}STATIC{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+    <img src="{% static 'balls.jpg' %}" alt='image'></img>
+{% endblock %}
+
+

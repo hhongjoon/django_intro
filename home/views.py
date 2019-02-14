@@ -57,5 +57,27 @@ def template_example(request):
                 'datetimenow' : datetimenow
                 }
                 )
+                
+def static_example(request):
+    return render(request, 'static_example.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
