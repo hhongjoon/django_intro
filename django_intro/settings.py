@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'utilites.apps.UtilitesConfig',
 ]
 
 MIDDLEWARE = [ #검증하는 부분
