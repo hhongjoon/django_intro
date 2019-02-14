@@ -1,0 +1,113 @@
+<body style='height:10000px;'>
+    <h3>1.반복문</h3>
+    {% for menu in my_list %}
+        <p>{{ menu }}</p>
+    {% endfor %}
+    <hr>
+    {% for menu in my_list %}
+        {{forloop.counter}}
+            {% if forloop.first %}
+                <p>짜장 + 고추</p>
+            {% else %}
+                <p>{{ menu }}</p>
+            {%endif%}
+        {%endfor%}
+    
+    
+    
+    <hr>
+    {% for user in empty_list %}
+    <p>{{ user }}</p>
+    {% empty %}
+    <p>지금 가입한 회원이 없습니다.</p>
+    {% endfor %}
+    
+    
+    <hr>
+    <h3>2. 조건문</h3>
+    {% if '짜장면' in my_list %}
+    <p>짜장면엔 고춧가루</p>
+    {% endif %}
+    
+    <h3>3. length filter 활용</h3>
+    {% for messege in messages %}
+        {% if messege|length > 5 %}
+        <p>글씨가 너무 깁니다.</p>
+        {% else %}
+        <p> {{ messege }} , {{ messege|length }} </p>
+        {% endif %}
+    {% endfor %}
+    
+    <hr>
+    
+    <h4>4 lorem ipsum</h4>
+    <!--내장변수라 그냥 써도 나옴-->
+    <!--단어수 조절 가능-->
+    {% lorem 3 w%}
+    <hr>
+    {% lorem 4 random%}
+    <hr>
+    {% lorem 3 p%}
+    <hr>
+    
+    <h3>5. 글자수 제한</h3>
+    <p>{{ my_sentence|truncatewords:3 }}</p>
+    <p>{{ my_sentence|truncatechars:5 }}</p>
+    <!--5에서부터 한글자 씩 넣어짐-->
+    <p>{{ my_sentence|truncatewords:3 }}</p>
+    
+    <hr>
+    <h3>6. 글자 관련 filter</h3>
+    <p>{{ 'abc'|length }}</p>
+    <p>{{ 'ABC'|lower }}</p>
+    <p>{{ my_sentence|title}}</p>
+    <p>{{ 'Abc def'|capfirst }}</p>
+    <p>{{ my_list|random }}</p>
+    
+    <hr>
+    <h3>7. 연산</h3>
+    <p>{{ 4|add:6 }}</p>
+    
+    <hr>
+    <h3>8.날짜 표현</h3>
+    <!--인라인이라 br 해주어야 함-->
+    {% now "DATETIME_FORMAT" %}<br>
+    {% now "SHORT_DATETIME_FORMAT" %}<br>
+    {% now "DATE_FORMAT" %}<br>
+    {% now "SHORT_DATE_FORMAT" %}<br>
+    <hr>
+    {% now "Y년 m월 d일 (D) h:i" %}
+    <hr>
+    {% now "Y" as current_year %}
+    Copyright{{ current_year }}
+    <hr>
+    {{ datetimenow }}
+    <hr>
+    {{ datetimenow|date:"SHORT_DATE_FORMAT" }}<br>
+    {{ datetimenow|date }}
+    <hr>
+    <h3>9.기타</h3>
+    {{ google.com|urlize }}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
