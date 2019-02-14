@@ -27,6 +27,7 @@ urlpatterns = [
     # path('home/cube/<num>/', views.cube, name = 'cube'),
     # path('home/hello/<name>/', views.hello, name='hello'),
     # path('home/index/', views.index, name='index'),
+    path('utilites/', include('utilites.urls')),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
     
